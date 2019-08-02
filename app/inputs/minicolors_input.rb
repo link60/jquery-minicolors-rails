@@ -9,4 +9,15 @@ if defined? SimpleForm
 
     def input_type; :string end
   end
+else
+  class MinicolorsInput
+    def input_html_options
+      {}.tap do |options|
+        options[:data] ||= {}
+        options[:data][:minicolors] ||= {}
+      end
+    end
+
+    def input_type; :string end
+  end
 end
